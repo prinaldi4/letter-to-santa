@@ -288,26 +288,30 @@ async function generateGift() {
     return;
   }
 
-result.innerHTML = `
-    <div id="imageContainer">
-        <div class="loader" id="loader">
-            <img src="img/Elf_LoadingAnimation.gif" alt="Loading..." style="width: 100%; height: auto;">
-        </div>
-      <img 
-        class="gift-image"
-        alt="AI generated image of: ${wishText}"
-        src="https://image.pollinations.ai/prompt/${encodeURIComponent(wishText)}?width=512&height=512&nologo=true"
-        width="500"
-        height="500"
-        onload="document.getElementById('loader').style.display='none'"
-        onload="document.getElementById('signature').style.display='none'"
-      >
-    </div>
-    <div id="enjoyMessage" style="display: none; margin-top: 10px;">
-        <p style="margin-bottom: 30px;"><span style="color: #cc0000;">Merry Christmas ${signature}!<br>We hope you enjoy your gift:</span><br><strong>${wishText}</strong></p>
-    </div>
-  `;
+// Add Christmas elements to the prompt
+const christmasPrompt = `${wishText}, with Christmas tree, Christmas decorations, festive lighting, snow, magical Christmas atmosphere, holiday theme`;
 
+result.innerHTML = `
+  <div id="imageContainer">
+      <div class="loader" id="loader">
+          <img src="img/Elf_LoadingAnimation.gif" alt="Loading..." style="width: 100%; height: auto;">
+      </div>
+    <img 
+      class="gift-image"
+      alt="AI generated image of: ${wishText}"
+      src="https://image.pollinations.ai/prompt/${encodeURIComponent(christmasPrompt)}?width=512&height=512&nologo=true"
+      width="500"
+      height="500"
+      onload="document.getElementById('loader').style.display='none'"
+      onload="document.getElementById('signature').style.display='none'"
+    >
+  </div>
+  <div id="enjoyMessage" style="display: none; margin-top: 10px;">
+      <p style="margin-bottom: 30px;"><span style="color: #cc0000;">Merry Christmas ${signature}!<br>We hope you enjoy your gift:</span><br><strong>${wishText}</strong></p>
+  </div>
+`;
+// ... rest of the function remains the same
+  
 // Scroll immediately after setting the content
 setTimeout(() => {
     const imageContainer = document.getElementById('imageContainer');
