@@ -1,0 +1,342 @@
+<html><head><base href="./" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Coming+Soon&family=Creepster&family=Tourney:wdth,wght@114.2,900&display=swap" rel="stylesheet">
+<title>sA.I.nt Nick - Write a letter to Santa</title>
+<style>
+   html {
+  scroll-behavior: smooth;
+}
+
+body {
+  scroll-behavior: smooth;
+}
+
+
+ body {
+    /*background: #1a472a;*/
+    /*background-image: 
+      linear-gradient(0deg, rgba(26, 71, 42, 0.9), rgba(26, 71, 42, 0.7)),
+      url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='white' fill-opacity='0.4'%3E%3Cpath d='M0 0h40v40H0zm40 40h40v40H40z'/%3E%3C/g%3E%3C/svg%3E");
+    /*background-size: 100px 100px;*/
+    background-image: url(img/GreeenArgyle_bg.png); 
+    background-repeat:repeat;
+    background-size: 100;
+    min-height: 100vh;
+    margin: 0;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Berkshire Swash', cursive;
+    color: #353535;
+  }
+
+  .container {
+    width: 100%;
+    max-width: 1000px;
+    padding: 2rem;
+    margin: 1rem;
+    box-sizing: border-box;
+    background-size: cover;
+  }
+
+
+  .letter-paper {
+    background: #faf9f6;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 10px 50px rgba(0,0,0,0.4);
+    border: 6px dashed rgba(255, 17, 17, 0.45);
+    transform: rotate(-1deg);
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  @media (min-width: 768px) {
+    .container {
+      padding: 4rem;
+    }
+    
+    .letter-paper {
+      padding: 80px;
+    }
+
+    #imageContainer {
+        max-width: 90%; /* Adjusts container size for mobile */
+    }
+  }
+  
+  .letter-paper::before {
+    content: '';
+    position: absolute; /*Changed from relative to absolute */
+    top: -45px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 90px;
+    background: url(img/wax_seal_V2.png) no-repeat center center;    
+    z-index: 1;  /*Ensure it's on top */
+}
+
+  .header {
+    text-align: center;
+    margin-bottom: 1rem;
+    color:rgb(69, 69, 69);
+  }
+
+  .logo-image {
+    background-image: url('img/SaintNick_Logo_desktop.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 600px; /* adjust as needed */
+    height: 150px; /* adjust as needed */
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    .logo-image {
+        background-image: url('img/SaintNick_Logo_mobile.png');
+        width: 220px; /* adjust as needed */
+        height: 185px; /* adjust as needed */
+    }
+}
+
+  .logo {
+    font-size: clamp(6rem, 5vw, 4rem);
+    /*font-size: clamp(2.5rem, 5vw, 4rem);*/
+    /*font-size: 100pt;*/
+    color: #cc0000;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+    margin: 0;
+  }
+
+  .header p {
+    font-size: clamp(2rem, 3vw, 1.8rem);
+    /*font-size: clamp(1.2rem, 3vw, 1.8rem);*/
+    /*font-size: 36pt;*/
+    margin-top: 1rem;
+  }
+
+  .letter-content {
+    /*font-size: clamp(1.2rem, 2.5vw, 1.5rem);*/
+    font-size: 20pt;
+    line-height: 1;
+    color:rgb(69, 69, 69);
+  }
+
+  textarea {
+    width: 100%;
+    min-height: 100px;
+    border: 2px dashed #727573;
+    border-radius: 5px;
+    padding: 0.8rem;
+    font-family:'Coming Soon';
+    color:#353535;
+    font-size: clamp(1.1rem, 2vw, 1.4rem);
+    resize: vertical;
+    margin: 0 0;
+    box-sizing: border-box;
+  }
+
+  .signature-box {
+    border: 2px dashed #727573;
+    padding: 0.8rem;
+    margin: 10px 0;
+    width: 100%;
+    border-radius: 5px;
+    max-width: 300px;
+    font-family:'Coming Soon';
+    color:#353535;
+    font-size: clamp(1.1rem, 2vw, 1.4rem);
+    box-sizing: border-box;
+  }
+
+  button {
+    background: #cc0000;
+    color: white;
+    border: none;
+    padding: 1.2rem 2.5rem;
+    font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+    border-radius: 15px;
+    cursor: pointer;
+    transition: transform 0.2s, background 0.2s;
+    font-family: inherit;
+    width: 100%;
+    max-width: 300px;
+  }
+
+
+  @media (min-width: 768px) {
+    button {
+      width: auto;
+    }
+  }
+
+  button:hover {
+    transform: scale(1.05);
+    background: #aa0000;
+  }
+
+  .tourney {
+  font-family: "Tourney", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 900;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 114.2;
+}
+
+  .result {
+    margin-top: 2rem;
+    text-align: center;
+    font-size: clamp(1.1rem, 2vw, 1.4rem);
+  }
+ 
+  #imageContainer {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2000;
+    width: 100%; /* This makes the loader relative to container size */
+    height: auto;
+}
+
+.loader img {
+    width: 100%; /* Makes the loader image fill its container */
+    height: auto;
+}
+
+.gift-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+    display: block;
+    margin: 0 auto;
+}
+
+/* Optional: Adjust loader size for different screen sizes */
+@media (max-width: 768px) {
+    .loader {
+        width: 100%; /* Slightly smaller on mobile */
+    }
+}
+
+@media (max-width: 480px) {
+    .loader {
+        width: 100%; /* Even smaller on very small screens */
+    }
+}
+  
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Coming+Soon&family=Creepster&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<div class="container">
+  <div class="letter-paper">
+    <div class="header">
+      <div class="logo-image"></div>
+      <!---<h1 class="logo"><span style="display: inline-block; transform: scaleY(1.03)scaleX(1.02);">S</span><span style="font-family: 'Berkshire Swash', cursive;"></span><span style="font-family: 'Tourney', sans-serif;"><span style="font-variant: small-caps;"><b><u>ai</u></b></span></span><span style="font-family: 'Berkshire Swash', cursive;">nt </span><span style="display: inline-block; transform: scaleY(1.35);"> N</span><span style="font-family: 'Berkshire Swash', cursive;">ick</span></h1>--->
+      <p>Write a letter to Santa</p>
+    </div>
+    
+    <div class="letter-content">
+      <p>Dear Santa,</p>
+      <textarea id="wishText" placeholder="Tell Santa what you'd like for Christmas..."></textarea>
+      <p>From,<br>
+      <input type="text" id="signature" class="signature-box" placeholder="Your name here"></p>
+      
+      <button onclick="generateGift()">Send to Santa</button>
+    </div>
+
+    <div class="result" id="result"></div>
+  </div>
+</div>
+
+<script>
+function createSnow() {
+}
+
+async function generateGift() {
+  const wishText = document.getElementById('wishText').value;
+  const signature = document.getElementById('signature').value;
+  const result = document.getElementById('result');
+  const loader = document.getElementById('loader');
+  
+  if(wishText.trim() === '') {
+    alert('Please write your wish to Santa first!');
+    return;
+  }
+
+  if(signature.trim() === '') {
+    alert('Oh no! You forgot to sign your letter!');
+    return;
+  }
+
+// Add Christmas elements to the prompt
+const christmasPrompt = `${wishText}, with Christmas tree, Christmas decorations, festive lighting, snow, magical Christmas atmosphere, holiday theme`;
+
+result.innerHTML = `
+  <div id="imageContainer">
+      <div class="loader" id="loader">
+          <img src="img/Elf_LoadingAnimation.gif" alt="Loading..." style="width: 100%; height: auto;">
+      </div>
+    <img 
+      class="gift-image"
+      alt="AI generated image of: ${wishText}"
+      src="https://image.pollinations.ai/prompt/${encodeURIComponent(christmasPrompt)}?width=512&height=512&nologo=true"
+      width="500"
+      height="500"
+      onload="document.getElementById('loader').style.display='none'"
+      onload="document.getElementById('signature').style.display='none'"
+    >
+  </div>
+  <div id="enjoyMessage" style="display: none; margin-top: 10px;">
+      <p style="margin-bottom: 30px;"><span style="color: #cc0000;">Merry Christmas ${signature}!<br>We hope you enjoy your gift:</span><br><strong>${wishText}</strong></p>
+  </div>
+`;
+// ... rest of the function remains the same
+
+// Scroll immediately after setting the content
+setTimeout(() => {
+    const imageContainer = document.getElementById('imageContainer');
+    imageContainer.scrollIntoView({ 
+      behavior: 'smooth', 
+      block: 'center'
+    });
+  }, 100);
+
+  // Hide loader when image loads and reveal enjoy message
+  const img = result.querySelector('.gift-image');
+  img.addEventListener('load', () => {
+    document.getElementById('loader').style.display = 'none';
+    document.getElementById('enjoyMessage').style.display = 'block';
+  });
+}
+
+  // In case of error
+  img.onerror = () => {
+    loader.style.display = 'none';
+    result.innerHTML = '<p style="color: #cc0000;">Oops! The elves had trouble creating your gift. Please try again!</p>';
+  };
+
+document.addEventListener('DOMContentLoaded', createSnow);
+</script>
+
+</body>
+</html> 
