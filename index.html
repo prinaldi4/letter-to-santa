@@ -342,7 +342,7 @@ function createSparkles(container) {
     container.style.position = 'relative';
     
     const colors = ['#FFD700', '#FFF', '#FFFACD', '#FFFFE0'];
-    const totalSparkles = 250;
+    const totalSparkles = 150;
     
     for (let i = 0; i < totalSparkles; i++) {
         setTimeout(() => {
@@ -361,7 +361,7 @@ function createSparkles(container) {
             // Styling
             sparkle.style.background = colors[Math.floor(Math.random() * colors.length)];
             sparkle.style.boxShadow = '0 0 ' + size + 'px ' + sparkle.style.background;
-            sparkle.style.animation = 'sparkleAnimation 1s ease-in-out forwards';
+            sparkle.style.animation = 'sparkleAnimation 0.5s ease-in-out forwards';
             
             container.appendChild(sparkle);
             
