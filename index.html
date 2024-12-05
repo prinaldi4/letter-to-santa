@@ -432,6 +432,11 @@ async function generateGift() {
         return;
     }
 
+  if (wishText.length > 50) {
+    alert('Your letter is a bit too long! Santa prefers shorter wishes.');
+    return;
+    }
+
     // Clear previous results
     result.innerHTML = '';
 
