@@ -253,33 +253,6 @@ body {
     z-index: 1000;
 }
 
-#muteButton {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    z-index: 3000;
-    background: #caffdc; /* Change this to match your green background */
-    color: white;
-    border: 2px solid white;
-    padding: 10px;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    cursor: pointer;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-    transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 20px;
-}
-
-#muteButton:hover {
-    transform: scale(1.1);
-    background: #2a573a; /* Slightly lighter green for hover state */
-    box-shadow: 0 3px 7px rgba(0,0,0,0.3);
-}
-
 .sparkle {
     position: absolute;
     background: white;
@@ -309,13 +282,6 @@ body {
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-
-    <audio id="backgroundMusic" loop>
-        <source src="sounds/christmas-music.mp3" type="audio/mp3">
-    </audio>
-    <button id="muteButton">
-        <span id="muteIcon">🔊</span>
-    </button>
 
 <div class="container">
   <div class="letter-paper">
@@ -372,9 +338,7 @@ document.addEventListener('DOMContentLoaded', function() {
 function playSoundEffect(soundName) {
     const sound = new Audio(`sounds/${soundName}.mp3`);
     sound.volume = 1;
-    if (!document.getElementById('backgroundMusic').muted) {
-        sound.play().catch(e => console.log('Audio playback prevented'));
-    }
+    sound.play().catch(e => console.log('Audio playback prevented'));
 }
 
     // Sparkle styles
@@ -453,7 +417,7 @@ const moderationList = {
          'assranger', 'assshit', 'assshole', 'asssucker', 'asswad', 'asswhore', 'asswipe', 'asswipes', 'auto erotic', 'autoerotic', 'axwound', 'azazel', 'azz', 'b!tch', 'b00bs', 'b17ch', 'b1tch', 'babe', 'babeland', 'babes', 
          'baby batter', 'baby juice', 'badfuck', 'ball gag', 'ball gravy', 'ball kicking', 'ball licking', 'ball sack', 'ball sucking', 'ballbag', 'balllicker', 'balls', 'ballsack', 'bampot', 'bang', "bang (one's) box", 'bangbros', 
          'banger', 'banging', 'bareback', 'barely legal', 'barenaked', 'barf', 'barface', 'barfface', 'bastard', 'bastardo', 'bastards', 'bastinado', 'batty boy', 'bawdy', 'bazongas', 'bazooms', 'bbw', 'bdsm', 'beaner', 'beaners', 
-         'beardedclam', 'beastial', 'beastiality', 'beatch', 'beater', 'beatyourmeat', 'beaver', 'beaver cleaver', 'beaver lips', 'beef curtain', 'beef curtains', 'beer', 'beeyotch', 'bellend', 'bender', 'beotch', 'bestial', 'bestiality', 
+         'beardedclam', 'beastial', 'beastiality', 'beatch', 'beater', 'beatyourmeat', 'beaver', 'beaver cleaver', 'beaver lips', 'beef curtain', 'beef curtains', 'beeyotch', 'bellend', 'bender', 'beotch', 'bestial', 'bestiality', 
          'bi-sexual', 'bi+ch', 'biatch', 'bicurious', 'big black', 'big breasts', 'big knockers', 'big tits', 'bigbastard', 'bigbutt', 'bigger', 'bigtits', 'bimbo', 'bimbos', 'bint', 'birdlock', 'bisexual', 'bitch', 'bitch tit', 'bitchass', 
          'bitched', 'bitcher', 'bitchers', 'bitches', 'bitchez', 'bitchin', 'bitching', 'bitchtits', 'bitchy', 'black cock', 'blonde action', 'blonde on blonde action', 'bloodclaat', 'bloody', 'bloody hell', 'blow', 'blow job', 'blow me',
         'blow mud', 'blow your load', 'blowjob', 'blowjobs', 'blue waffle', 'blumpkin', 'boang', 'bod', 'bodily', 'bogan', 'bohunk', 'boink', 'boiolas', 'bollick', 'bollock', 'bollocks', 'bollok', 'bollox', 'bomd', 'bondage', 'bone', 'boned', 
@@ -480,7 +444,7 @@ const moderationList = {
          'facial', 'fack', 'fag', 'fagbag', 'fagfucker', 'fagg', 'fagged', 'fagging', 'faggit', 'faggitt', 'faggot', 'faggotcock', 'faggots', 'faggs', 'fagot', 'fagots', 'fags', 'fagtard', 'faig', 'faigt', 'fanny', 'fannybandit', 'fannyflaps', 'fannyfucker', 'fanyy', 'fart', 'fartknocker', 
          'fastfuck', 'fat', 'fatass', 'fatfuck', 'fatfucker', 'fcuk', 'fcuker', 'fcuking', 'fecal', 'feck', 'fecker', 'felch', 'felcher', 'felching', 'fellate', 'fellatio', 'feltch', 'feltcher', 'female squirting', 'femdom', 'fenian', 'figging', 'fingerbang', 'fingerfuck', 'fingerfucked', 
          'fingerfucker', 'fingerfuckers', 'fingerfucking', 'fingerfucks', 'fingering', 'fist fuck', 'fisted', 'fistfuck', 'fistfucked', 'fistfucker', 'fistfuckers', 'fistfucking', 'fistfuckings', 'fistfucks', 'fisting', 'fisty', 'flamer', 'flange', 'flaps', 'fleshflute', 'flog the log', 
-         'floozy', 'foad', 'foah', 'fondle', 'foobar', 'fook', 'fooker', 'foot fetish', 'footfuck', 'footfucker', 'footjob', 'footlicker', 'foreskin', 'fornicate', 'fornication', 'fornicates', 'fornicating','freakfuck', 'freakyfucker', 'freefuck', 'freex', 'frigg', 'frigga', 'frotting', 'fubar', 'fuc', 'fuck', 'fuck buttons', 'fuck hole', 
+         'floozy', 'foad', 'foah', 'fondle', 'foobar', 'fook', 'fooker', 'foot fetish', 'footfuck', 'footfucker', 'footjob', 'footlicker', 'foreskin', 'freakfuck', 'freakyfucker', 'freefuck', 'freex', 'frigg', 'frigga', 'frotting', 'fubar', 'fuc', 'fuck', 'fuck buttons', 'fuck hole', 
          'fuck off', 'fuck puppet', 'fuck trophy', 'fuck yo mama', 'fuck you', 'fuck-ass', 'fuck-bitch', 'fuck-tard', 'fucka', 'fuckass', 'fuckbag', 'fuckboy', 'fuckbrain', 'fuckbutt', 'fuckbutter', 'fucked', 'fuckedup', 'fucker', 'fuckers', 'fuckersucker', 'fuckface', 'fuckfreak', 
          'fuckhead', 'fuckheads', 'fuckher', 'fuckhole', 'fuckin', 'fucking', 'fuckingbitch', 'fuckings', 'fuckingshitmotherfucker', 'fuckme', 'fuckmeat', 'fuckmehard', 'fuckmonkey', 'fucknugget', 'fucknut', 'fucknutt', 'fuckoff', 'fucks', 'fuckstick', 'fucktard', 'fucktards', 'fucktart', 
          'fucktoy', 'fucktwat', 'fuckup', 'fuckwad', 'fuckwhit', 'fuckwhore', 'fuckwit', 'fuckwitt', 'fuckyou', 'fudge packer', 'fudge-packer', 'fudgepacker', 'fuk', 'fuker', 'fukker', 'fukkers', 'fukkin', 'fuks', 'fukwhit', 'fukwit', 'fuq', 'futanari', 'fux', 'fux0r', 'fvck', 'fxck', 
