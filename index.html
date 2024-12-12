@@ -557,8 +557,10 @@ const coalMessages = [
 
 // Add these moderation functions
 function containsInappropriateContent(text) {
-    const lowerText = text.toLowerCase();
-    return moderationList.inappropriate.some(word => lowerText.includes(word));
+    const words = text.toLowerCase().split(' ');
+    return moderationList.inappropriate.some(badWord => 
+        words.includes(badWord.toLowerCase())
+    );
 }
 
 function sanitizeText(text) {
